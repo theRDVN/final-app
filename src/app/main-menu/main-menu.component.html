@@ -1,0 +1,22 @@
+<header class="page-header">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 py-lg-2">
+  <div class="container">
+    <a class="navbar-brand py-lg-2 px-lg-3" href="">FinalApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto text-uppercase font-weight-bold">
+        <li class="nav-item" routerLinkActive="active" *ngFor="let menuItem of menu">
+          <a class="nav-link py-lg-2 px-lg-3" [routerLink]="menuItem.url">{{menuItem.label}}</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-primary" (click)="onNew()">Login</button>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+

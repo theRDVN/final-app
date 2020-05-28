@@ -1,0 +1,44 @@
+.section-padding {
+  padding: 90px 0;
+}
+
+.section-title-image {
+  background-color: #ffffff;
+  background-image: url("https://www.x-bionicsphere.com/wp-content/uploads/2018/04/DJI_0798-e1523218343439.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 600px;
+}
+
+.section-services {
+  background: #f9f9f9;
+}
+
+.block-headline-text {
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 22px;
+    color: #969696;
+  }
+}
+
+.section-services .box {
+  background: #fff;
+  border: 1px solid #ededed;
+  height: 100%;
+
+  .image {
+    position: relative;
+
+    img:hover {
+      opacity: 0.7;
+      transition: .3s ease;
+    }
+  }
+}

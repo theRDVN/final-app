@@ -1,0 +1,38 @@
+.section-padding{
+  padding: 90px 0;
+}
+
+.section-contact-us .btn{
+  background: #ffcf35;
+}
+
+.section-contact-us .btn:hover{
+  transition: .3s ease;
+  background: #ffe12b;
+}
+
+.section-contact-us .text-area{
+  height: 150px;
+  resize: none;
+}
+
+.section-contact-swimming{
+  background: #f9f9f9;
+}
+
+.section-contact-fitness{
+  background: #f9f9f9;
+}
+
+.card{
+  box-shadow: 1px 1px #969696;
+  width: 18rem;
+}
+
+.block-headline-text {
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+}

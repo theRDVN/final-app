@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="modal-title">Login</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+ <div class="col-12">
+   <input class="form-control my-1" type="text" name="username" placeholder="Username" required>
+ </div>
+
+  <div class="col-12">
+    <input class="form-control my-1" type="text" name="password" placeholder="Password" required>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" value="Login">Login</button>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary float-left" routerLink="/register" (click)="activeModal.close('SingUp Reroute')">Sign Up</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

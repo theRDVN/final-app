@@ -6,9 +6,9 @@ import {SFloorFitComponent} from './s-floor-fit/s-floor-fit.component';
 import {FitnessGalleryComponent} from './fitness-gallery/fitness-gallery.component';
 
 const routes: Routes = [
-  {path: 'ffloorfit', component:FFloorFitComponent},
-  {path: 'sfloorfit', component:SFloorFitComponent},
-  {path: 'fitnessgallery', component:FitnessGalleryComponent}
+  {path: 'fitness/ffloorfit', component:FFloorFitComponent},
+  {path: 'fitness/sfloorfit', component:SFloorFitComponent},
+  {path: 'fitness/fitnessgallery', component:FitnessGalleryComponent}
 ];
 
 @NgModule({

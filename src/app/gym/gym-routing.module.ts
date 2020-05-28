@@ -7,10 +7,10 @@ import {SmallGymComponent} from './small-gym/small-gym.component';
 import {GymGalleryComponent} from './gym-gallery/gym-gallery.component';
 
 const routes: Routes = [
-  {path: 'biggym', component:BigGymComponent},
-  {path: 'mediumgym', component:MediumGymComponent},
-  {path: 'smallgym', component:SmallGymComponent},
-  {path: 'gymgallery', component:GymGalleryComponent}
+  {path: 'gym/biggym', component:BigGymComponent},
+  {path: 'gym/mediumgym', component:MediumGymComponent},
+  {path: 'gym/smallgym', component:SmallGymComponent},
+  {path: 'gym/gymgallery', component:GymGalleryComponent}
 ];
 
 @NgModule({

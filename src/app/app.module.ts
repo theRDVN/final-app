@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import {SwimmingRoutingModule} from './swimming/swimming-routing.module';
+import {GymRoutingModule} from './gym/gym-routing.module';
+import {FitnessRoutingModule} from './fitness/fitness-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -11,13 +15,16 @@ import { GymComponent } from './gym/gym.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { ProfileComponent } from './profile/profile.component';
+
 import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {SwimmingRoutingModule} from './swimming/swimming-routing.module';
-import {GymRoutingModule} from './gym/gym-routing.module';
-import {FitnessRoutingModule} from './fitness/fitness-routing.module';
-import { ContactusComponent } from './contactus/contactus.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LocalStorageModule} from 'angular-2-local-storage';
+import { HttpClientModule } from '@angular/common/http';
+
+import { authInterceptorProviders } from './_helper/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,7 @@ import {FormsModule} from '@angular/forms';
     PageNotFoundComponent,
     RegisterComponent,
     ContactusComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +50,14 @@ import {FormsModule} from '@angular/forms';
     FitnessRoutingModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    LocalStorageModule.forRoot({
+      prefix: 'my-app',
+      storageType: 'localStorage'
+    })
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

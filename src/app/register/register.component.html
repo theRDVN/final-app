@@ -7,29 +7,48 @@
             <h2 class="text- text-uppercase text-center">register form</h2>
           </div>
           <div class="card-body">
-            <form>
-              <div class="form-row">
-              <input class="form-control m-2 col" placeholder="Username" type="text">
+            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+              <div class="form-group">
+              <input class="form-control" name="username" [(ngModel)]="form.username" placeholder="Username" type="text"
+                     #username="ngModel" minlength="4" maxlength="15" required>
+                <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+                  <div *ngIf="username.errors.required">Username is required</div>
+                  <div *ngIf="username.errors.minlength">
+                    Username must be at least 4 characters
+                  </div>
+                  <div *ngIf="username.errors.maxlength">
+                    Username must be at most 20 characters
+                  </div>
+                </div>
               </div>
-              <div class="form-row">
-              <input class="form-control m-2 col" placeholder="Name" type="text">
-              <input class="form-control m-2 col" placeholder="Surname" type="text">
+              <div class="form-group">
+              <input class="form-control" placeholder="E-mail" type="email" name="email" [(ngModel)]="form.email"
+              required email #email="ngModel">
+                <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.email">
+                    Email must be a valid email address
+                  </div>
+                </div>
               </div>
-              <div class="form-row">
-              <input class="form-control m-2 col" placeholder="Password" type="password">
-              <input class="form-control m-2 col" placeholder="Password Check" type="password">
+              <div class="form-group">
+              <input class="form-control" placeholder="Password" type="password" name="password" [(ngModel)]="form.password"
+              required minlength="6" #password="ngModel">
+                <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+                  <div *ngIf="password.errors.required">Password is required</div>
+                  <div *ngIf="password.errors.minlength">
+                    Password must contain at least 6 characters
+                  </div>
+                </div>
               </div>
-              <div class="form-row">
-              <select class="form-control m-2 col-5">
-                <option selected>Choose Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-                <option>Don't want to select</option>
-              </select>
+              <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+              </div>
+
+              <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                Sign Up failed!<br />{{ errorMessage }}
               </div>
             </form>
-            <button type="submit" class="btn btn-primary m-2">Register</button>
           </div>
         </div>
       </div>

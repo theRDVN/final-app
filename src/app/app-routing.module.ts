@@ -8,6 +8,7 @@ import {FitnessComponent} from './fitness/fitness.component';
 import {SwimmingComponent} from './swimming/swimming.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ContactusComponent} from './contactus/contactus.component';
+import {ProfileComponent} from "./profile/profile.component";
 
 const routes: Routes = [
   {path: 'home', component:HomeComponent},
@@ -17,12 +18,13 @@ const routes: Routes = [
   {path: 'fitness', component:FitnessComponent},
   {path: 'swimming', component:SwimmingComponent},
   {path: 'contactus', component: ContactusComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component:PageNotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

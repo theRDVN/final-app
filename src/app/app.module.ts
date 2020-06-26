@@ -25,6 +25,7 @@ import {LocalStorageModule} from 'angular-2-local-storage';
 import { HttpClientModule } from '@angular/common/http';
 
 import { authInterceptorProviders } from './_helper/auth.interceptor';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { authInterceptorProviders } from './_helper/auth.interceptor';
     GymRoutingModule,
     FitnessRoutingModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,

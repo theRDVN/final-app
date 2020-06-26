@@ -6,15 +6,16 @@ import { BigPoolComponent } from './big-pool/big-pool.component';
 import { SmallPoolComponent } from './small-pool/small-pool.component';
 import { PoolGalleryComponent } from './pool-gallery/pool-gallery.component';
 import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [BigPoolComponent, SmallPoolComponent, PoolGalleryComponent],
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         SwimmingRoutingModule,
         NgbButtonsModule,
-        FormsModule
     ]
 })
 export class SwimmingModule { }

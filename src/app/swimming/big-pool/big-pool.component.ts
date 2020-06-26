@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ReservationService} from "../../_services/reservation.service";
+import {UserService} from "../../_services/user.service";
 
 @Component({
   selector: 'app-big-pool',
@@ -9,7 +10,6 @@ import {ReservationService} from "../../_services/reservation.service";
 export class BigPoolComponent implements OnInit {
 
   reservation = {
-    reservation_id: "",
     user_id: "",
     places_id: "",
     timeFrom: "",
@@ -18,16 +18,15 @@ export class BigPoolComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private reservationService: ReservationService) { }
+  constructor(private reservationService: ReservationService, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   submit() {
     const data = {
-      reservation_id: this.reservation.reservation_id,
-      user_id: this.reservation.user_id,
-      places_id: this.reservation.places_id,
+      user_id: this.userService.getUserId(),
+      places_id: 1,
       timeFrom: this.reservation.timeFrom,
       timeTo: this.reservation.timeTo,
       amount: this.reservation.amount

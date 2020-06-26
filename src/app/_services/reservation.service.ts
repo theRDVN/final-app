@@ -23,15 +23,9 @@ export class ReservationService {
     return this.http.post(this.baseUrl, data);
   }
 
-  update(id, data) {
-    return this.http.put(`${(this.baseUrl)}/${id}`, data);
-  }
 
   delete(id) {
     return this.http.delete(`${(this.baseUrl)}/${id}`);
   }
 
-  deleteAll() {
-    return this.http.delete(this.baseUrl);
-  }
 }

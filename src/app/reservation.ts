@@ -1,5 +1,3 @@
-import DateTimeFormat = Intl.DateTimeFormat;
-
 export class Reservation {
   reservation_id: number;
   user_id: number;

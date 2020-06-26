@@ -5,17 +5,13 @@
       <hr class="my-3">
       <form class="mx-4" method="post">
         <div class="form-row">
-          <div class="form-group col-12 col-md-6">
+          <div class="form-group col-12">
             <label class="">Time of reservation</label>
-            <input class="form-control mb-2" type="datetime-local" placeholder="Time">
-          </div>
-          <div class="form-group col-12 col-md-6">
-            <label class="">Duration of reservation</label>
-            <input class="form-control mb-2" type="number" placeholder="Duration">
+            <input class="form-control mb-2" [(ngModel)]="reservation.timeFrom" type="datetime-local" placeholder="Time">
           </div>
           <div class="form-group col-12">
             <label class="">Number of lanes</label>
-            <select class="form-control mb-2" type="number" placeholder="Lanes">
+            <select class="form-control mb-2" type="number" [(ngModel)]="reservation.amount" placeholder="Lanes">
               <option>1</option>
               <option>2</option>
               <option>3</option>

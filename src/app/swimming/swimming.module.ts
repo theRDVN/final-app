@@ -7,7 +7,6 @@ import { SmallPoolComponent } from './small-pool/small-pool.component';
 import { PoolGalleryComponent } from './pool-gallery/pool-gallery.component';
 import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [BigPoolComponent, SmallPoolComponent, PoolGalleryComponent],

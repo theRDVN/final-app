@@ -3,18 +3,25 @@
     <div class="jumbotron jumbotron-fluid bg-white">
       <h1 class="display-4 text-center">Reservation form</h1>
       <hr class="my-3">
-      <form class="mx-4" name="form" novalidate>
+      <form class="mx-4" name="form" #f="ngForm" novalidate>
         <div class="form-row">
           <div class="form-group col-12">
             <label class="">Time of reservation</label>
-            <input class="form-control mb-2" required [(ngModel)]="reservation.timeFrom" type="datetime-local" min="1" max="8" placeholder="Time"  name="timeFrom">
+            <input class="form-control mb-2" type="datetime-local" min="1" max="8" placeholder="Time" required>
           </div>
           <div class="form-group col-12">
             <label class="">Number of lanes</label>
-            <input class="form-control mb-2" required [(ngModel)]="reservation.amount" #amount="ngModel" type="number" placeholder="Lanes"  name="amount">
+            <input class="form-control mb-2" placeholder="Lanes" type="number" name="amount" [(ngModel)]="reservation.amount"
+                   required min="1" max="8" #amount="ngModel">
+            <div class="alert-danger" *ngIf="f.submitted && amount.invalid">
+              <div *ngIf="amount.errors.required">Password is required</div>
+              <div *ngIf="amount.errors.min && amount.errors.max">
+                Minimum to reserve is 1 and maximum is 8
+              </div>
+            </div>
           </div>
           <div class="form-group col-12 col-md-6">
-            <button class="btn btn-outline-primary" (click)="submit()" type="submit">Reserve!</button>
+            <button class="btn btn-outline-primary" (click)="submit()">Reserve!</button>
           </div>
         </div>
       </form>

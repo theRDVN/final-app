@@ -5,7 +5,7 @@ import {UserService} from "../../_services/user.service";
 @Component({
   selector: 'app-big-pool',
   templateUrl: './big-pool.component.html',
-  styleUrls: ['./big-pool.component.scss']
+  styleUrls: ['./big-pool.component.scss'],
 })
 export class BigPoolComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class BigPoolComponent implements OnInit {
     places_id: "",
     timeFrom: "",
     timeTo: "",
-    amount: ""
+    amount: "",
   };
   submitted = false;
 
@@ -29,7 +29,7 @@ export class BigPoolComponent implements OnInit {
       places_id: 1,
       timeFrom: this.reservation.timeFrom,
       timeTo: this.reservation.timeTo,
-      amount: this.reservation.amount
+      amount: this.reservation.amount,
     };
 
     this.reservationService.create(data).subscribe(response => {

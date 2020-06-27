@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import {SwimmingRoutingModule} from './swimming/swimming-routing.module';
@@ -20,12 +21,12 @@ import { ProfileComponent } from './profile/profile.component';
 
 import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LocalStorageModule} from 'angular-2-local-storage';
 import { HttpClientModule } from '@angular/common/http';
 
 import { authInterceptorProviders } from './_helper/auth.interceptor';
 import {CommonModule} from "@angular/common";
+import {SwimmingModule} from "./swimming/swimming.module";
 
 @NgModule({
   declarations: [
@@ -42,8 +43,8 @@ import {CommonModule} from "@angular/common";
     ProfileComponent,
   ],
   imports: [
-    NgbModule,
     BrowserModule,
+    NgbModule,
     BrowserAnimationsModule,
     NgbModalModule,
     SwimmingRoutingModule,
@@ -51,13 +52,13 @@ import {CommonModule} from "@angular/common";
     FitnessRoutingModule,
     AppRoutingModule,
     CommonModule,
-    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     LocalStorageModule.forRoot({
       prefix: 'my-app',
       storageType: 'localStorage'
     }),
-    FormsModule,
 
   ],
   providers: [authInterceptorProviders],

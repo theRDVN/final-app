@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './_helper/auth.interceptor';
 import {CommonModule} from "@angular/common";
 import {SwimmingModule} from "./swimming/swimming.module";
+import {GymModule} from "./gym/gym.module";
+import {FitnessModule} from "./fitness/fitness.module";
 
 @NgModule({
   declarations: [

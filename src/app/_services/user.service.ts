@@ -10,7 +10,7 @@ const API_URL = 'http://localhost:8080/api/test/';
 export class UserService {
   private user_id;
   private username;
-  private user_role;
+  private user_roles;
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class UserService {
   }
 
   setUser(user){
-    this.user_role = user.role;
+    this.user_roles = user.role;
     this.user_id = user.id;
     this.username = user.username;
   }
@@ -28,11 +28,15 @@ export class UserService {
     return this.user_id;
   }
 
+  saveRoles(_roles){
+    this.user_roles = _roles;
+  }
+
   getUsername(){
     return this.username;
   }
 
-  getUserRole(){
-    return this.user_role;
+  getUserRoles(){
+    return this.user_roles;
   }
 }

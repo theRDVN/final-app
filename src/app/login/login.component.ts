@@ -4,6 +4,7 @@ import {AuthService} from "../_services/auth.service";
 import {TokenStorageService} from "../_services/token-storage.service";
 import {error} from "@angular/compiler/src/util";
 import {generateErrorMessage} from "codelyzer/angular/styles/cssLexer";
+import {UserService} from "../_services/user.service";
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit{
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(public activeModal: NgbActiveModal, private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(public activeModal: NgbActiveModal, private authService: AuthService, private tokenStorage: TokenStorageService, private userService: UserService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit{
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        //this.reloadPage();
       },
       err => {
         this.errorMessage = err.message;

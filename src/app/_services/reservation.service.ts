@@ -19,7 +19,7 @@ export class ReservationService {
   }
 
   create(data) {
-    return this.http.post(baseUrl, data);
+    return this.http.post(baseUrl, data, {headers : { "Content-Type": "application/json"}});
   }
 
 

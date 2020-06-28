@@ -2,30 +2,30 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
+const baseUrl = 'http://localhost:8080/api/auth/';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
 
-  private baseUrl = 'http://localhost:8080/api/auth/';
-
   constructor(private http:HttpClient) { }
 
   getAll() {
-    return this.http.get(this.baseUrl);
+    return this.http.get(baseUrl);
   }
 
   get(id) {
-    return this.http.get(`${(this.baseUrl)}/${id}`);
+    return this.http.get(`${(baseUrl)}/${id}`);
   }
 
   create(data) {
-    return this.http.post(this.baseUrl, data);
+    return this.http.post(baseUrl, data);
   }
 
 
   delete(id) {
-    return this.http.delete(`${(this.baseUrl)}/${id}`);
+    return this.http.delete(`${(baseUrl)}/${id}`);
   }
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ReservationService} from "../../_services/reservation.service";
 import {UserService} from "../../_services/user.service";
+import moment from 'moment';
 
 @Component({
   selector: 'app-big-pool',
@@ -17,8 +18,10 @@ export class BigPoolComponent implements OnInit {
     amount: "",
   };
   submitted = false;
+  public dateString: string;
 
-  constructor(private reservationService: ReservationService, private userService: UserService) { }
+  constructor(private reservationService: ReservationService, private userService: UserService) {
+  }
 
   ngOnInit(): void {
   }

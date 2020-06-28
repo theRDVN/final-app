@@ -8,6 +8,8 @@ import { SmallPoolComponent } from './small-pool/small-pool.component';
 import { PoolGalleryComponent } from './pool-gallery/pool-gallery.component';
 import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import moment from 'moment';
 
 @NgModule({
   declarations: [BigPoolComponent, SmallPoolComponent, PoolGalleryComponent],
@@ -18,6 +20,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
     NgbButtonsModule,
     SwimmingRoutingModule,
+    MatDatepickerModule,
   ],
 })
 export class SwimmingModule { }

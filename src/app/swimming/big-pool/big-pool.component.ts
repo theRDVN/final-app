@@ -18,7 +18,6 @@ export class BigPoolComponent implements OnInit {
     amount: "",
   };
   submitted = false;
-  public dateString: string;
 
   constructor(private reservationService: ReservationService, private userService: UserService) {
   }
@@ -43,5 +42,4 @@ export class BigPoolComponent implements OnInit {
       console.log(error);
       });
   }
-
 }
